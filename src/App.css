@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+  font-family: 'Indie Flower', cursive;
+}
+
+main {
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+header .header-title, header .header-subtitle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+nav {
+  margin-bottom: 5px;
+}
+
+nav .nav-item {
+  margin-right: 3px;
+}
+
+nav .nav-item a {
+  color: #000;
+}
+
+article {
+  border: 2px #000 solid;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+article .article-page {
+  border-left: 0;
+  border-right: 0;
+}
+
+article .article-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+article .byline {
+  display: flex;
+  flex-direction: row;
+}
+
+article .byline .byline-author,
+article .byline .byline-date,
+article .byline .byline-tags {
+  margin-right: 3px;
+}
+
+article .byline .byline-author span,
+article .byline .byline-tags span,
+article .byline .byline-comments-count span {
+  font-weight: bold;
+}
+
+article .article-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 13px;
+  margin-bottom: 3px;
+}
+
+article.share {
+  display: flex;
+  flex-direction: row;
+}
