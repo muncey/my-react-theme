@@ -1,13 +1,13 @@
 import React from 'react';
 
 /**
- * <BlogHeader title subtitle />
+ * <Header title subtitle />
  * 
  * @param title - title of the blog
  * @param subtitle - secondary title
  * 
  */
-export default function BlogHeader(props) {
+export const Header = (props) => {
   return (
     <header>
       <div className="header-title">

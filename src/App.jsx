@@ -1,36 +1,37 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Redirect, Route, Link, Switch } from "react-router-dom";
+// import { Provider } from 'react-redux';
 import './App.css';
-import BlogHeader from './components/BlogHeader';
-import BlogNav from './components/BlogNav';
-import About from './Views/About';
-import Home from './Views/Home';
-import Page from './Views/Page';
-import Post from './Views/Post';
-import Posts from './Views/Posts';
+import { Header } from './components/Header';
+import { Navbar } from './components/Navbar';
+import { PostsList } from './features/posts/PostsList';
+import { SinglePostPage } from './features/posts/SinglePostPage'
+import { UsersList } from './features/users/UsersList';
+import { UserPage } from './features/users/UserPage';
 
 function App() {
   return (
-    <Provider>
       <Router>
         <main>
-          <BlogHeader title="Muncey Blog" subtitle="Philip Munce" />
-          <BlogNav />
+          <Header title="Muncey Blog" subtitle="Philip Munce" />
+          <Navbar />
           <Switch>
-            <Route path="/" exact component={Posts} />
-            <Route path="/home" exact component={Home} />
-            <Route path="/about" exact component={About} />
-            <Route path="/page" exact component={Page} />
-            <Route path="/post" exact component={Post} />
-            <Route path="/posts" exact component={Posts} />
+            <Route 
+              exact
+              path="/"
+              render={() => (
+                <React.Fragment>
+                  <PostsList />
+                </React.Fragment>
+              )} />
+            <Route exact path="/posts/:postId" component={SinglePostPage} />
+            <Route exact path="/users" component={UsersList} />
+            <Route exact path="/users/:userId" component={UserPage} />
+            <Redirect to="/" />
           </Switch>
         </main>
       </Router>
-    </Provider>
   );
 }
-
-
 
 export default App;
