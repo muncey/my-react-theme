@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import parse from "html-react-parser";
@@ -31,15 +31,23 @@ function formatExcerpt(excerpt) {
 }
 
 export const PostsList = () => {
+  const [page, setPage] = useState(1);
   const {
-    data: posts = [],
+    data,
     isLoading,
     isFetching,
     isSuccess,
     isError,
     error
-  } = useGetPostsQuery(1);
+  } = useGetPostsQuery(page);
+  if (data)
+    console.log(data);
+    
+  const posts = data?.posts ?? [];
+  const total = data?.total ?? 0;
+  const totalPages = data?.totalPages ?? 0;
 
+  
   let content;
 
   if (isLoading) {
@@ -54,10 +62,19 @@ export const PostsList = () => {
     content = <div>{error.toString()}</div>
   }
 
+  const pagination = data ? (
+    <div className="blog-pagination mb-3 mt-3 d-flex flex-row justify-content-between">
+      <button disabled={page === 1} className="btn btn-secondary" onClick={() => setPage(page - 1)}>Prev</button>
+      <div className="pl-5">Page {page} of {totalPages}</div>
+      <button disabled={page === totalPages} className="btn btn-primary" onClick={() => setPage(page + 1)}>Next</button>
+    </div>
+  ) : (<div></div>);
+
   return (
     <section className="posts-list">
-      <h2>Posts</h2>
+      {pagination}
       {content}
+      {pagination}
     </section>
   )
 }
