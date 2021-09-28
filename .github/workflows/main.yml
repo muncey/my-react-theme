@@ -38,6 +38,6 @@ jobs:
             dist
             !dist/**/*.md
       - name: Create Release Folder
-        run: rsync dist-without-markdown ../release
+        run: npm publish
 
   
