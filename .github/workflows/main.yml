@@ -39,7 +39,7 @@ jobs:
 #             !dist/**/*.md
       - name: Zip project # This would actually build your project, using zip for an example artifact
         run: |
-          zip --junk-paths dist
+          zip -r dist.zip ./dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
