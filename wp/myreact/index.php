@@ -5,7 +5,7 @@ Theme URI: https://munceyweb.com
 Author: Philip Munce
 Author URI: https://munceyweb.com
 Description: Simple theme to host a react.js web site
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
@@ -28,3 +28,5 @@ Use it to make something cool, have fun, and share what you've learned with othe
     <?php wp_footer(); ?>
   </body>
 </html>
+
+
