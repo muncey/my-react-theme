@@ -1,13 +1,16 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { useDispatch } from 'react-redux';
+import { getAppOptions } from './services';
+
+const options = getAppOptions();
 
 export const apiSlice = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://www.munceyweb.com/wp-json/wp/v2' }),
+  baseQuery: fetchBaseQuery({ baseUrl: options.baseUrl }),
   endpoints: (builder) => ({
       getPosts: builder.query({
         query: (page = 1) => ({
-          url: `/posts?page=${page}&_fields=title,id,author,excerpt,date`,
+          url: `/posts?page=${page}&_fields=title,id,author,excerpt,date,meta`,
           responseHandler: async response => {
             const data = await response.json();
             const headers = response.headers;
@@ -30,7 +33,7 @@ export const apiSlice = createApi({
         },
       }),
       getPost: builder.query({
-        query: (id) => `/posts/${id}?_fields=title,id,author,content,date`
+        query: (id) => `/posts/${id}?_fields=title,id,author,content,date,meta`
       })
   })
 });

@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css");
 
 body {
   font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  background-color: #e3e3e3;
 }
 
 main {
   padding: 10px;
+}
+
+.header-wrapper {
+  background-color: white;
+  border-bottom: 1px solid #c3c3c3;
+  box-shadow: 2px solid #c3c3c3;
 }
 
 header {
@@ -13,30 +22,47 @@ header {
   flex-direction: column;
 }
 
+header .header-title {
+  margin-bottom: 0;
+}
+
+header .header-subtitle {
+  margin-top: 0;
+}
+
 header .header-title, header .header-subtitle {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   width: 100%;
 }
 
-nav {
-  margin-bottom: 5px;
+.navbar ul {
+  display: flex;
+  flex-direction: column;
 }
 
-nav .nav-item {
-  margin-right: 3px;
+.nav-item a {
+  color: black;
+  text-decoration: none;
 }
 
-nav .nav-item a {
-  color: #000;
+.nav-item .home-icon {
+  color: yellow;
+}
+
+.nav-item .authors-icon {
+  color: red;
 }
 
 article {
-  border: 2px #000 solid;
+  border: 1px #c3c3c3 solid;
+  background-color: white;
   padding: 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+  box-shadow: 1px #c3c3c3 solid;
+  border-radius: 3px;
 }
 
 article .article-page {
@@ -78,4 +104,82 @@ article .article-content {
 article.share {
   display: flex;
   flex-direction: row;
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+}
+.author-name {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.author-details {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.6em;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.author .author-image {
+  border-radius: 50%;
+}
+
+.post-title {
+  margin-top: 7px;
+}
+
+.post-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.post-title a:hover {
+  color: blue;
+}
+
+.post-details {
+  margin-left: 35px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links-header h4 {
+  font-size: 0.9em;
+}
+
+.social-links-list {
+  background-color: white;
+  border: 1px #c3c3c3 dashed;
+  padding: 5px;
+}
+
+.social-link {
+  font-size: 0.9em;
+  padding: 5px;
+}
+
+.social-link a {
+  text-decoration: none;
+}
+
+.post-links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.6em;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-content pre {
+  background-color: #e3e3e3;
+}
+
+.post-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.6em;  
 }

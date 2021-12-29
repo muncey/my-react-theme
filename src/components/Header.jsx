@@ -7,17 +7,15 @@ import React from 'react';
  * @param subtitle - secondary title
  * 
  */
-export const Header = (props) => {
+export default function Header(props) {
   return (
-    <header>
-      <div className="header-title">
-        <h1>{props.title}</h1>
-      </div>
-      <div className="header-subtitle">
-        <p>{props.subtitle}</p>
-      </div>
-    </header>
+    <div className="header-wrapper">
+      <header className="container">
+        <div className="header-title">
+          <h1>{props.title}</h1>
+        </div>
+      </header>
+    </div>
   )
 
 }
-
