@@ -1,6 +1,6 @@
-## Muncey web react theme
+## My React Theme
 
-Muncey web react theme is a React application which can be installed as a wordpress theme.  The purpose of this project is to develop a lightweight React front end for wordpress.  
+My react theme is a React application which can be installed as a wordpress theme.  The purpose of this project is to develop a lightweight React front end for wordpress.  
 
 As I build out features I am documenting my journey on Twitter (https://twitter.com/MuncePhilip) and my personal web site (https://munceyweb.com)
 
